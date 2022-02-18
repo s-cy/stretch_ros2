@@ -49,10 +49,10 @@ def generate_launch_description():
                                  parameters=[{'robot_description': robot_description_content},
                                              {'publish_frequency': 15.0}])
 
-    aggregator = Node(package='diagnostic_aggregator',
-                      executable='aggregator_node',
-                      output='log',
-                      parameters=[str(stretch_core_path / 'config/diagnostics.yaml')])
+#    aggregator = Node(package='diagnostic_aggregator',
+#                      executable='aggregator_node',
+#                      output='log',
+#                      parameters=[str(stretch_core_path / 'config/diagnostics.yaml')])
 
     stretch_driver_params = [
         {'rate': 25.0,
@@ -77,5 +77,5 @@ def generate_launch_description():
                               declare_controller_arg,
                               joint_state_publisher,
                               robot_state_publisher,
-                              aggregator,
+                              #aggregator,
                               stretch_driver])
