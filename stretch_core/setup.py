@@ -12,6 +12,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', glob('launch/*.launch.py')),
         ('share/' + package_name + '/config', glob('config/*')),
+        ('share/' + package_name + '/rviz', glob('rviz/*')),
     ],
     install_requires=['setuptools'],
     url='https://github.com/hello-robot/stretch_ros2',
@@ -23,6 +24,11 @@ setup(
     entry_points={
         'console_scripts': [
             'stretch_driver = stretch_core.stretch_driver:main',
+            'detect_aruco_markers = stretch_core.detect_aruco_markers:main',
+            'd435i_accel_correction = stretch_core.d435i_accel_correction:main',
+            'keyboard_teleop = stretch_core.keyboard_teleop:main',
+            'avoider = stretch_core.avoider:main',
+            'align_to_aruco = stretch_core.align_to_aruco:main',
         ],
     },
 )
